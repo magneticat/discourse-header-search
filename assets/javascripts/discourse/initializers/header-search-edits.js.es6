@@ -149,7 +149,7 @@ export default {
         }
       });
 
-      api.decorateWidget('home-logo:after', function(helper) {
+      api.decorateWidget('algolia:after', function(helper) {
         const header = helper.widget.parentWidget.parentWidget,
               appController = helper.register.lookup('controller:application'),
               showHeaderSearch = appController.get('showHeaderSearch'),
