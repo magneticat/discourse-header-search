@@ -149,6 +149,7 @@ export default {
         }
       });
 
+/*
       api.decorateWidget('algolia:after', function(helper) {
         const header = helper.widget.parentWidget.parentWidget,
               appController = helper.register.lookup('controller:application'),
@@ -166,6 +167,25 @@ export default {
           $('.d-header').removeClass('header-search-enabled');
         }
       });
+*/
+     api.createWidget('headersearch', {
+        tagName: 'div.header-search',
+        html() {
+          return [
+            h('form', {
+              action: '/search',
+              method: 'GET'
+            }, [
+              h('input.aa-input#search-box', {
+                name: "q",
+                placeholder: "Search the forum...",
+                autocomplete: "off"
+              })
+            ])
+          ];
+        }
+});
+
 
       api.reopenWidget('home-logo', {
         click(e) {
